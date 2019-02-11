@@ -17,33 +17,12 @@ A Python program which simulates a "free" slot machine which displays a random c
 # Import modules
 import random
 from random import randint
-# Import modules
+import slot_machine.output_literals
 import slot_machine.console_output as co
 import slot_machine.game_outcome as go
-import slot_machine.slot_machine as sm
-
-# Constants
-WELCOME = "\tWelcome to the Slot Machine!"
-RULES = "\tMatch 2 of any kind to win $5\n\tMatch 3 of any fruit to win $10\n\tMatch 3 BELLS to win $50!\n"
-ENGAGE = "Do you want to play? (y or n): "
-LEVER = "\t OK, pulling the lever!"
-DRAW = "\t{} | {} | {}"
-DRAW_MAX = 4
-EARNED = "You earned ${}"
-PLAY_SUMMARY = "In {} play(s), you have earned ${:.1f}.\n"
-EXIT_MESSAGE = "Thanks for playing~!"
-DIV_LINE = ("=" * 40)
-NEW_LINE = "\n"
-
-
-# Data structures
-slot_machine = {
-  1 : "Cherries",
-  2 : "Oranges",
-  3 : "Plums",
-  4 : "Melons",
-  5 : "Bells"
-}
+import slot_machine.slot_machine_game as sm
+import slot_machine.output_literals as ol
+import slot_machine.data_structures as ds
 
 # Main function
 def main():
@@ -61,7 +40,7 @@ def main():
   
   # Gambling time~!
   co.game_title()
-  rules()
+  co.rules()
   # Start game?
   engage = co.start_game(engage)
   
@@ -76,7 +55,7 @@ def main():
     slot_picks = sm.slot_seed(slot_picks)
     
     # Draw 3 random items from the seeded list
-    draw = sm.play_slot(DRAW_MAX, draw, slot_picks)
+    draw = sm.play_slot(ol.DRAW_MAX, draw, slot_picks)
     
     # Fill slots
     slot_1 = sm.get_slot_1(draw, slot_1)
@@ -84,7 +63,7 @@ def main():
     slot_3 = sm.get_slot_3(draw, slot_3)
 
     # Get values in slot_machine dict from draw list keys
-    my_slot = sm.user_draw(slot_machine, draw, my_slot, slot_1, slot_2, slot_3)
+    my_slot = sm.user_draw(ds.slot_machine, draw, my_slot, slot_1, slot_2, slot_3)
     
     # Reset the draw for another round
     draw = sm.clear_draw(draw)

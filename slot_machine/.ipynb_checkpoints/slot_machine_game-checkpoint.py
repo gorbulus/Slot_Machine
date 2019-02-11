@@ -7,7 +7,7 @@
 # Import modules
 import random
 from random import randint
-import slot_machine.output_literals
+import slot_machine.data_structures as ds
 
 # slot_seed
 def slot_seed(slot_picks):  
@@ -45,10 +45,10 @@ def create_draw(draw, slot_1, slot_2, slot_3):
   return draw
 
 # user_draw
-def user_draw(slot_machine, draw, my_slot, slot_1, slot_2, slot_3):
+def user_draw(ds.slot_machine, draw, my_slot, slot_1, slot_2, slot_3):
   draw = create_draw(draw, slot_1, slot_2, slot_3)
   for item in draw:
-    my_slot = slot_machine[item]
+    my_slot = ds.slot_machine[item]
   return my_slot
 
 # clear_draw
