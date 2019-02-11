@@ -7,7 +7,7 @@
 #draw_income
 def draw_income(slot_1, slot_2, slot_3, draw_earnings):
   # Two of a kind = $5.00
-  if ((slot_1 == slot_2) or (slot_1 == slot_3)):
+  if ((slot_1 == slot_2) or (slot_1 == slot_3) or (slot_2 == slot_3)):
     draw_earnings += 5
     # Three of a kind = $10.00
     if ((slot_1 == slot_2) and (slot_1 == slot_3)):
