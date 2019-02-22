@@ -45,7 +45,7 @@ def create_draw(draw, slot_1, slot_2, slot_3):
   return draw
 
 # user_draw
-def user_draw(ds.slot_machine, draw, my_slot, slot_1, slot_2, slot_3):
+def user_draw(slot_machine, draw, my_slot, slot_1, slot_2, slot_3):
   draw = create_draw(draw, slot_1, slot_2, slot_3)
   for item in draw:
     my_slot = ds.slot_machine[item]
@@ -56,3 +56,8 @@ def clear_draw(draw):
   # clears the draw list for the next round
   del draw[:]
   return draw
+
+# clear_draw_earnings
+def clear_draw_earnings(draw_earnings):
+    draw_earnings = 0
+    return draw_earnings

@@ -4,6 +4,7 @@
 
 # Import modules
 import slot_machine.output_literals as ol
+import slot_machine.data_structures as ds
 
 # Console output======================
 # game_title
@@ -25,7 +26,7 @@ def pull_lever():
 
 # draw_output
 def draw_output(slot_1, slot_2, slot_3):
-  return print(ol.DRAW.format(slot_machine[slot_1], slot_machine[slot_2], slot_machine[slot_3]))
+  return print(ol.DRAW.format(ds.slot_machine[slot_1], ds.slot_machine[slot_2], ds.slot_machine[slot_3]))
 
 # draw_income_output
 def draw_income_output(draw_earnings):

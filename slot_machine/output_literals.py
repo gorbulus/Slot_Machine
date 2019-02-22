@@ -2,6 +2,9 @@
 # William Ponton
 # 2.10.19
 
+# Import modules
+import slot_machine.data_structures
+
 # Constants
 WELCOME = "\tWelcome to the Slot Machine!"
 RULES = "\tMatch 2 of any kind to win $5\n\tMatch 3 of any fruit to win $10\n\tMatch 3 BELLS to win $50!\n"

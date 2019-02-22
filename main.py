@@ -63,7 +63,7 @@ def main():
     slot_3 = sm.get_slot_3(draw, slot_3)
 
     # Get values in slot_machine dict from draw list keys
-    my_slot = sm.user_draw(ds.slot_machine, draw, my_slot, slot_1, slot_2, slot_3)
+    my_slot = sm.user_draw(slot_machine, draw, my_slot, slot_1, slot_2, slot_3)
     
     # Reset the draw for another round
     draw = sm.clear_draw(draw)
@@ -91,7 +91,7 @@ def main():
     engage = co.start_game(engage)
   else:
     # Exit & game summary
-    game_exit()
+    co.game_exit()
     # Final game summary
     co.total_income_output(total_plays, total_earnings)
     
