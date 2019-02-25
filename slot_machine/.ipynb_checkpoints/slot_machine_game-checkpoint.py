@@ -12,16 +12,21 @@ import slot_machine.data_structures as ds
 # slot_seed
 def slot_seed(slot_picks):  
   slot_list = list(range(1, 6))
-  slot_choice = random.choice(slot_list)
-  slot_picks += [slot_choice]
+  for n in slot_list:
+    slot_choice = random.choice(slot_list)
+    slot_picks += [slot_choice]
   return slot_picks
 
+# def clear_slot_picks
+def clear_slot_picks(slot_picks):
+    del slot_picks[:]
+    return slot_picks
 # play_slot
 def play_slot(DRAW_MAX, draw, slot_picks):
   for n in range(DRAW_MAX):
     slot_seed(slot_picks)
     draw.append(str(random.choice(slot_picks)))
-  del slot_picks[:]
+  slot_picks = clear_slot_picks(slot_picks)
   return draw
 
 # get_slot_1
@@ -43,13 +48,6 @@ def get_slot_3(draw, slot_3):
 def create_draw(draw, slot_1, slot_2, slot_3):
   draw = [slot_1, slot_2, slot_3]
   return draw
-
-# user_draw
-def user_draw(slot_machine, draw, my_slot, slot_1, slot_2, slot_3):
-  draw = create_draw(draw, slot_1, slot_2, slot_3)
-  for item in draw:
-    my_slot = ds.slot_machine[item]
-  return my_slot
 
 # clear_draw
 def clear_draw(draw):

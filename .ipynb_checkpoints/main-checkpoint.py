@@ -15,14 +15,21 @@ A Python program which simulates a "free" slot machine which displays a random c
 '''
 
 # Import modules
+import csv
 import random
 from random import randint
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 import slot_machine.output_literals
 import slot_machine.console_output as co
 import slot_machine.game_outcome as go
 import slot_machine.slot_machine_game as sm
 import slot_machine.output_literals as ol
 import slot_machine.data_structures as ds
+import slot_machine.statistical_analysis as sa
+
+CSV_STATS = "statistics.csv"
+
 
 # Main function
 def main():
@@ -36,7 +43,9 @@ def main():
   slot_3 = ""
   slot_picks = []
   draw = []
-  my_slot = []
+
+  #Statistical locals
+ 
   
   # Gambling time~!
   co.game_title()
@@ -53,17 +62,19 @@ def main():
     
     # Build the 5 slot list
     slot_picks = sm.slot_seed(slot_picks)
+    print(slot_picks)
     
     # Draw 3 random items from the seeded list
     draw = sm.play_slot(ol.DRAW_MAX, draw, slot_picks)
+    print(draw)
     
     # Fill slots
     slot_1 = sm.get_slot_1(draw, slot_1)
+    print(slot_1)
     slot_2 = sm.get_slot_2(draw, slot_2)
+    print(slot_2)
     slot_3 = sm.get_slot_3(draw, slot_3)
-
-    # Get values in slot_machine dict from draw list keys
-    my_slot = sm.user_draw(slot_machine, draw, my_slot, slot_1, slot_2, slot_3)
+    print(slot_3)
     
     # Reset the draw for another round
     draw = sm.clear_draw(draw)
@@ -71,10 +82,18 @@ def main():
     # Game outcome/summary
     # Calculate earnings in a single draw
     draw_earnings = go.draw_income(slot_1, slot_2, slot_3, draw_earnings)
+    print(draw_earnings)
 
     # Calculate total earnings in gameplay
     total_earnings = go.total_income(total_earnings, draw_earnings)
-
+    print(total_earnings)
+    
+    # plot draw searnings and turns
+    with open(CSV_STATS, 'w') as csvfile:
+        filewriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        filewriter.writerow(["Slot 1", "Slot 2", "Slot 3"])
+        filewriter.writerow([slot_1, slot_2, slot_3])
+    
     # Console output of draw and winnings
     co.draw_output(slot_1, slot_2, slot_3)
 
