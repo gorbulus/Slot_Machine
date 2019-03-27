@@ -5,9 +5,7 @@
 
 '''
 A Python program which simulates a "free" slot machine which displays a random combination of 3 of the following items (as text):
-
       Cherries, Oranges, Plums, Melons, and Bells
-
         If none of the items match, the user wins nothing.
         If only two of the items match, the user wins $5
         If all three items match, the user wins $10
@@ -116,4 +114,4 @@ def main():
     
 # Control initiating event
 if __name__ == "__main__":
-  main()
+    main()

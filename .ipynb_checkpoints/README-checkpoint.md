@@ -18,7 +18,7 @@ Github: [gorbulus](https://github.com/gorbulus)
 
 ## A "FREE" Slot Machine program with the following rules:
 
-### Cherries | Cherries | Oranges | Plums | Melons | Bell Peppers
+### Cherries | Oranges | Plums | Melons | Bell Peppers
 
 1. Win $5.00 if you draw two of a kind
 

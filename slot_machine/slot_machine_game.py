@@ -52,6 +52,7 @@ def create_draw(draw, slot_1, slot_2, slot_3):
 
 # clear_draw
 def clear_draw(draw):
+    
   # clears the draw list for the next round
   del draw[:]
   return draw

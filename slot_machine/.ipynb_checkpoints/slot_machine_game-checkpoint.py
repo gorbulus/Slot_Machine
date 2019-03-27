@@ -21,6 +21,7 @@ def slot_seed(slot_picks):
 def clear_slot_picks(slot_picks):
     del slot_picks[:]
     return slot_picks
+
 # play_slot
 def play_slot(DRAW_MAX, draw, slot_picks):
   for n in range(DRAW_MAX):
@@ -51,6 +52,7 @@ def create_draw(draw, slot_1, slot_2, slot_3):
 
 # clear_draw
 def clear_draw(draw):
+    
   # clears the draw list for the next round
   del draw[:]
   return draw
