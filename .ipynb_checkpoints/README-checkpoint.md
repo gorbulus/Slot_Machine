@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="180" src="beep_boop.png">
+  <img width="180" src="https://user-images.githubusercontent.com/19881320/54484151-b85c4780-4836-11e9-923f-c5e0e5afe866.jpg">
 </p>
 
 # Slot Machine Game
@@ -8,9 +8,13 @@
 
 ## 2.24.19
 
-### Contact
+## Contact Information
 
-Email: [waponton](waponton@gmail.com)
+William Ponton: [LinkedIn](https://www.linkedin.com/in/williampontoncfsp/) 
+
+Email: [@gorbulus](waponton@gmail.com)
+
+REPL: [@gorbulus](https://repl.it/@gorbulus)
 
 Github: [gorbulus](https://github.com/gorbulus)
 
